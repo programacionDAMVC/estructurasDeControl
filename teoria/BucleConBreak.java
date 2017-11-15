@@ -1,7 +1,16 @@
+/**Fichero BucleConBreak.java
+  Ejemplo de funcionamiento de bucles
+  usando sentencia break
+  Calculamos si un nº es primo o no
+  @author Manuel
+  @version 1.0
+  */
 public class BucleConBreak {
+
     public static void main (String[] args) {
 
-        long posibleNumeroPrimo =  98764321261L;
+        //long posibleNumeroPrimo =  98764321261L;
+        long posibleNumeroPrimo =  84979;
         boolean resultado = false;
         //for (int divisor = 2 ; divisor < posibleNumeroPrimo ; divisor++ ) {
         //de la mitad del posibleNuemeroPrimo hasta posibleNumeroPrimos 
@@ -18,9 +27,30 @@ public class BucleConBreak {
         }
         System.out.println("¿Es nº primo " + posibleNumeroPrimo + "? " + !resultado);
 
-        // System.out.println("¿Es nº primo " + posibleNumeroPrimo + "? " + esNumeroPrimo (posibleNumeroPrimo ) );
+        System.out.println("¿Es nº primo " + 86201 + "? " + esNumeroPrimo ( 86201 ) );
+        System.out.println("¿Es nº primo " + 86747 + "? " + esNumeroPrimo ( 86747 ) );
+        System.out.println("¿Es nº primo " + 4 + "? " + esNumeroPrimo ( 4 ) );
     }
-    // public static boolean esNumeroPrimo (long numero)  
+
+
+    /** Método que nos devuelve si un número
+      es primo o no, pasando éste por argumento
+      @param numero el dígito que se comprobará si es primo o no
+      @return true o false dependiendo si es o no es número primo
+    */
+    public static boolean esNumeroPrimo (long numero){  
+        boolean resultado = false;
+        for (long divisor = 2 ; divisor <= numero / 2 ; divisor++ ) {
+
+            resultado = numero % divisor == 0;
+            if ( resultado ) {
+                break;
+            }
+
+        }
+        return !resultado;
+
+    }
 }
 
 
